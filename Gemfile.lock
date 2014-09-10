@@ -56,6 +56,9 @@ GEM
     execjs (2.2.1)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
+    foundation-rails (5.4.3.1)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -191,6 +194,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   factory_girl
+  foundation-rails
   haml
   html2haml
   jbuilder (~> 2.0)
