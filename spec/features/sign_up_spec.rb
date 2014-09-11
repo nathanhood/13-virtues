@@ -34,7 +34,6 @@
 feature "Sign Up" do
 
   background do
-    # @user = FactoryGirl.create(:user)
     visit "/"
     click_link "Sign Up"
   end
@@ -63,6 +62,18 @@ feature "Sign Up" do
     expect(current_path).to eq(user_registration_path)
   end
 
+  scenario "with non-matching passwords" do
+    fill_in "Email", with: "Example User"
+    Capybara.exact = true
+    fill_in "* Password", with: "aaaaaa"
+    Capybara.exact = false
+    fill_in "Password Confirmation", with: "invalid11"
+    click_on "Create Account"
+    expect(page).to have_content("Please review the problems below:")
+    expect(page).to have_content("doesn't match Password")
+    expect(current_path).to eq(user_registration_path)
+  end
+
   scenario "with valid information" do
     fill_in "Email", with: "example@thirteen.com"
     Capybara.exact = true
@@ -72,5 +83,19 @@ feature "Sign Up" do
     expect{ click_button "Create Account" }.to change(User, :count).by(1)
     expect(page).to have_content("Welcome")
     expect(current_path).to eq(profile_path)
+  end
+
+  scenario "with duplicate email" do
+    user = FactoryGirl.create(:user)
+
+    fill_in "Email", with: "test@mail.com"
+    Capybara.exact = true
+    fill_in "* Password", with: "aaaaaaaa"
+    Capybara.exact = false
+    fill_in "Password Confirmation", with: "aaaaaaaa"
+    click_on "Create Account"
+    expect(current_path).to eq(user_registration_path)
+    expect(page).to have_content("Please review the problems below:")
+    expect(page).to have_content("has already been taken")
   end
 end
