@@ -28,6 +28,8 @@ group :test do
   gem 'factory_girl'
   gem 'pry-rails'
   gem 'shoulda'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password

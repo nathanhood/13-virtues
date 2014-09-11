@@ -11,10 +11,10 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
-      - if notice
-        %p.alert-box.round.notice= notice
-      - if alert
-        %p.alert-box.round.alert= alert
-      = render 'layouts/messages'
+      -# - if notice
+      -#   %p.alert-box.round.notice= notice
+      -# - if alert
+      -#   %p.alert-box.round.alert= alert
+      -# = render 'layouts/messages'
     = yield
     = javascript_include_tag "application"
