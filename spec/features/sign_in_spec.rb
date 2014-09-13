@@ -10,7 +10,7 @@ feature "Sign In" do
     fill_in "Email", with: "test@mail.com"
     fill_in "Password", with: "foobar11"
     click_on "Submit"
-    expect(page).to have_content("Welcome back, test@mail.com!")
+    expect(page).to have_content("Welcome back")
     expect(page).to have_content("Sign Out")
     expect(current_path).to eq(profile_path)
   end

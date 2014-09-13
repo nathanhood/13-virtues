@@ -41,13 +41,13 @@ I want to create an account
   * validate if email is not a duplicate
   * validate if email is an email
   * validate if passwords match
-  * validate if password is at least 6 characters
-  * validate if photo is either empty or a photo link
+  * validate if password is at least 8 characters
+  * validate if photo is either empty or a photo link (photo will be added after account creation)
   * ensure that photo is saved at a file size of no larger than 100kb
 * User is saved to the database through the user model with:
-  * Name
+  * Name - empty
   * Email
-  * Photo Link
+  * Photo Link - empty
   * Password
 
 ---
@@ -81,14 +81,19 @@ I want to create an account with my Facebook account
 
 As a user,
 in order to start pursuing lifelong goals and virtues,
-I want to create virtues or choose existing virtues
+I want to create virtues or choose from a list of existing virtues
 
 **Usage:**
-
 1. On profile page, click prompt to add virtues
 
-2. Add virtues from list by scrolling or keyword searching and selecting
+2. Add virtues from list by scrolling or keyword searching
 
-3. If virtue does not exist, create new virtue on same page
+3. If virtue does not exist, create new virtue on same page, virtue will be created
 
-4. 
+**Acceptance Criteria**
+* User is prompted to add/create virtues
+* Virtues must be unique
+* Virtue is created if it does not already exist
+* Virtue and User are added to join table
+
+## User records daily records
