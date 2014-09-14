@@ -1,0 +1,27 @@
+
+.getting-started {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 35px 0 35px 0;
+}
+
+.welcome-wrapper {
+  height: 50px;
+  padding: 25px 0 0 0;
+  font-size: 1.15em;
+}
+
+.getting-started-directions {
+  text-align: left;
+  li {
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+
+  .add-virtues-link {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+  }
+}

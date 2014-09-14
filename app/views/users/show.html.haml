@@ -1,3 +1,26 @@
-= render 'layouts/messages'
-%h1 Show Page
-%p= current_user.email
+.row
+  .welcome-wrapper
+    - flash.each do |name, msg|
+      - if msg.is_a?(String)
+        .welcome= msg
+        .add-report-wrapper
+          - if current_user.virtues.count > 0
+            = link_to "Add Daily Report"
+.row
+  - if current_user.virtues.count == 0
+    .getting-started.large-12.small-10.columns.small-offset-1.large-offset-0
+      %h2 Getting Started
+      %h4 Be like Ben
+      .getting-started-directions.large-6.columns.large-offset-3
+        %ol
+          %li Add your own virtues
+          %p Define what is important to you
+          %li Make daily assessments
+          %p Assess how you feel you are doing on each virtue. Write a short entry to help process and rate the day's events.
+          %li Set reminders
+          %p Tell us when, and we will send you a daily reminder to keep up with your daily assessments.
+          %li Grow
+          %p Watch yourself grow into the person you want to be
+        = link_to "Add Virtues", virtues_path, class: "button add-virtues-link"
+  - else
+    .profile-wrapper.large-12.columns

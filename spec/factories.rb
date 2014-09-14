@@ -4,4 +4,8 @@ FactoryGirl.define do
     password "foobar11"
     password_confirmation "foobar11"
   end
+
+  factory :virtue do
+    name "test virtue"
+  end
 end
