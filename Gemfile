@@ -17,6 +17,7 @@ gem 'spring',        group: :development
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'rspec-rails'
