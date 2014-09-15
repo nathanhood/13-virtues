@@ -1,17 +1,21 @@
 .row
   .virtues-wrapper.large-12.columns
     %h2.virtues-index-title Virtues
-    .add-virtues-wrapper.large-6.columns.large-offset-3.small-10.small-offset-1
+    %button.show-add-virtue Add Virtue
+    .add-virtues-wrapper.large-6.columns.large-offset-3.small-10.small-offset-1(data-virtues="#{current_user.virtues.length}")
       %h3.add-virtue-title Add Virtue
-      .ui-widget
-        %label Virtue
-        %select.add-virtues-select
-          %option(value="") start typing...
-          %option(value="a") a
-          %option(value="abc") abc
-          %option(value="java") java
-          %option(value="javascript") javascript
-          %option(value="home") home
-          %option(value="stead") stead
-      %label Description
-      %textarea.virtue-description
+      #add-virtue-form
+        .ui-widget
+          %label Virtue
+          %select.add-virtues-select
+            %option(value="")
+            - @virtues.each do |v|
+              %option(value="#{v.name}")= v.name
+          %p * If your virtue does not already exist, it will be created.
+        %label Description
+        %textarea.virtue-description
+        %button.add-virtue-button.btn Submit
+        %a.hide-add-virtue(href="#") Hide
+    .row
+      .virtues-list-wrapper.large-10.columns.large-offset-1
+        %ul

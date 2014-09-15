@@ -9,7 +9,7 @@
         var select = this.element.hide(),
           selected = select.children( ":selected" ),
           value = selected.val() ? selected.text() : "";
-        var input = $( "<input>" )
+        var input = $( "<input placeholder='start typing virtue...'>" )
           .insertAfter(select)
           .val( value )
           .autocomplete({

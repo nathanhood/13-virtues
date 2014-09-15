@@ -10,9 +10,19 @@ div.add-virtues-wrapper {
   border: 1px solid black;
   border-radius: 7px;
   padding: 20px 30px;
+  display: none;
 
   .add-virtue-title {
     text-align: center;
     font-weight: bold;
   }
+}
+
+.show-add-virtue {
+  float: left;
+  display: none;
+}
+
+.hide-add-virtue:hover {
+  text-decoration: underline;
 }
