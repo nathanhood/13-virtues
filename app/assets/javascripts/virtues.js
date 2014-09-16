@@ -12,6 +12,7 @@
 
   function checkTotalVirtues(){
     var virtues = $('.add-virtues-wrapper').data('virtues') * 1;
+
     if (virtues > 0) {
       $('.add-virtues-wrapper').hide();
       $('.show-add-virtue').show();

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :virtues, only: [:index]
+  resources :virtues, only: [:index, :create]
   root 'static_pages#home'
   get '/profile', to: 'users#show'
 

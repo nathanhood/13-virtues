@@ -1,21 +1,23 @@
 .row
   .virtues-wrapper.large-12.columns
+    = render 'layouts/messages'
     %h2.virtues-index-title Virtues
     %button.show-add-virtue Add Virtue
-    .add-virtues-wrapper.large-6.columns.large-offset-3.small-10.small-offset-1(data-virtues="#{current_user.virtues.length}")
+    .add-virtues-wrapper.large-6.columns.large-offset-3.small-10.small-offset-1(data-virtues="#{current_user.commitments.length}")
       %h3.add-virtue-title Add Virtue
-      #add-virtue-form
-        .ui-widget
-          %label Virtue
-          %select.add-virtues-select
-            %option(value="")
-            - @virtues.each do |v|
-              %option(value="#{v.name}")= v.name
-          %p * If your virtue does not already exist, it will be created.
-        %label Description
-        %textarea.virtue-description
-        %button.add-virtue-button.btn Submit
+      = simple_form_for(@virtue, remote: true) do |f|
+        = div_for(@virtue, class: "ui-widget") do
+          = f.input :name, label: "Find Virtue", collection: Virtue.all, required: false, input_html: { class: "add-virtues-select" }
+        = f.input :name, label: "New Virtue", required: true
+        = f.fields_for :commitments do |ff|
+          = ff.input :description, as: :text
+        = f.submit "Submit", input_html: { class: "btn large-btn" }
         %a.hide-add-virtue(href="#") Hide
+
     .row
       .virtues-list-wrapper.large-10.columns.large-offset-1
         %ul
+          - current_user.commitments.each do |c|
+            %li
+              %h4= c.virtue.name
+              %p= c.description
