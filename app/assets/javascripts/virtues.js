@@ -8,6 +8,31 @@
     checkTotalVirtues();
     $('.show-add-virtue').click(showAddVirtueContainer);
     $('.hide-add-virtue').click(hideAddVirtueContainer);
+    $('.find-virtue-input').on('focus', trackValueOfVirtueInput);
+    $('.find-virtue-input').on('blur', getValueFromVirtueInput);
+    $('.show-final-virtue').on('click', showFinalInput);
+  }
+
+  function showFinalInput(event){
+    event.preventDefault();
+    $('.final-virtue-wrapper').slideToggle();
+  }
+
+  var input;
+
+  function trackValueOfVirtueInput(){
+    $('.find-virtue-input').on('keyup', function(){
+      input = $('.find-virtue-input').val();
+    });
+  }
+
+  function getValueFromVirtueInput(){
+    var inputValue = $('.find-virtue-input').val();
+    if (inputValue === '') {
+      $('.final-virtue-input').val(input);
+    } else {
+      $('.final-virtue-input').val(inputValue);
+    }
   }
 
   function checkTotalVirtues(){

@@ -8,7 +8,10 @@
       = simple_form_for(@virtue, remote: true) do |f|
         = div_for(@virtue, class: "ui-widget") do
           = f.input :name, label: "Find Virtue", collection: Virtue.all, required: false, input_html: { class: "add-virtues-select" }
-        = f.input :name, label: "New Virtue", required: true
+          %p Can't find what you are looking for?
+          %a.show-final-virtue(href="#") click here
+        = div_for(@virtue, class: "final-virtue-wrapper") do
+          = f.input :name, label: "New Virtue", required: true, input_html: { class: "final-virtue-input" }
         = f.fields_for :commitments do |ff|
           = ff.input :description, as: :text
         = f.submit "Submit", input_html: { class: "btn large-btn" }
