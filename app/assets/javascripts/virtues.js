@@ -42,11 +42,12 @@
       $('.add-virtues-wrapper').hide();
       $('.show-add-virtue').show();
     } else {
-      $('.add-virtues-wrapper').show();
+      $('.add-virtues-wrapper').css('visibility', 'visible');
     }
   }
 
   function showAddVirtueContainer(){
+    $('.add-virtues-wrapper').css('visibility', 'visible');
     $('.add-virtues-wrapper').slideToggle();
     $('.show-add-virtue').hide();
   }

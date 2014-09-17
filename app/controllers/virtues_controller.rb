@@ -4,19 +4,21 @@ class VirtuesController < ApplicationController
 
   def index
     @virtue = Virtue.new
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
   end
 
   def create
-    @virtue = Virtue.new(name: params[:virtue][:name])
-    @commitment = Commitment.new(description: params[:virtue][:commitments][:description], user: current_user, virtue: @virtue)
-    if @virtue.save && @commitment.save
-      flash.now[:notice] = "It worked!!"
+    virtue = Virtue.find_by(name: params[:virtue][:name])
+    if !virtue
+      @virtue = Virtue.create(name: params[:virtue][:name])
     else
-      flash.now[:alert] = "No worky!!"
+      @virtue = virtue
+    end
+
+    @commitment = Commitment.new(description: params[:virtue][:commitments][:description], user: current_user, virtue: @virtue)
+    if @commitment.save
+      flash.now[:notice] = "Success! Your virtue has been added."
+    else
+      flash.now[:alert] = "Something went wrong. Your virtue was not added."
     end
   end
 

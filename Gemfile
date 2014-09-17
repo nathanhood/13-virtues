@@ -31,6 +31,7 @@ group :test do
   gem 'shoulda'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'poltergeist'
 end
 
 # Use ActiveModel has_secure_password

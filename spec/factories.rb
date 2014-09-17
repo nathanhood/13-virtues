@@ -8,4 +8,10 @@ FactoryGirl.define do
   factory :virtue do
     name "test virtue"
   end
+
+  factory :commitment do
+    description "test description and stuff"
+    user
+    virtue
+  end
 end

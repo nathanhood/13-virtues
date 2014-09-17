@@ -1,4 +1,9 @@
-$('.virtues-list-wrapper ul').append('<%= j render "virtues/list" %>');
+$('.virtues-list').prepend('<%= j render "virtues/list" %>');
+
+$('.final-virtue-input').val('');
+$('.final-virtue-wrapper').hide();
+$('textarea').val('');
+$('.find-virtue-input').val('');
 
 $('.alert-box').remove();
 $('.virtues-wrapper').prepend('<%= j render "layouts/messages"%>');

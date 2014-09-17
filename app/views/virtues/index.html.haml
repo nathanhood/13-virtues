@@ -19,7 +19,7 @@
 
     .row
       .virtues-list-wrapper.large-10.columns.large-offset-1
-        %ul
+        %ul.virtues-list
           - current_user.commitments.each do |c|
             %li
               %h4= c.virtue.name
