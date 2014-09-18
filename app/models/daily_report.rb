@@ -1,4 +1,5 @@
 class DailyReport < ActiveRecord::Base
+  validates_presence_of :user
   before_save { self.entry = format_entry(entry) }
 
   belongs_to :user

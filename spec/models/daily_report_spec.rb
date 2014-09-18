@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe DailyReport, :type => :model do
+  it { should validate_presence_of :user }
 
   before do
     @user = FactoryGirl.create(:user)
@@ -22,6 +23,11 @@ RSpec.describe DailyReport, :type => :model do
       daily_report = DailyReport.find(daily_report.id)
       expect(daily_report.entry).to eq("this is a test entry")
       expect(DailyReport.all.count).to eq(1)
+    end
+
+    it "should not create a report - no user" do
+      daily_report = DailyReport.create(entry: 'this is a test entry')
+      expect(DailyReport.all.count).to eq(0)
     end
   end
 end

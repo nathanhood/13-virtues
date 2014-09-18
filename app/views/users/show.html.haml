@@ -3,9 +3,9 @@
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         .welcome= msg
-        .add-report-wrapper
-          - if current_user.virtues.count > 0
-            = link_to "Add Daily Report"
+    .add-report-wrapper
+      - if current_user.virtues.count > 0
+        = link_to "Add Daily Report", new_daily_report_path, class: "button"
 .row
   - if current_user.virtues.count == 0
     .getting-started.large-12.small-10.columns.small-offset-1.large-offset-0
@@ -24,4 +24,3 @@
         = link_to "Add Virtues", virtues_path, class: "button add-virtues-link"
   - else
     .profile-wrapper.large-12.columns
-      = link_to "Add Daily Report", new_daily_report_path, class: "button"
