@@ -8,6 +8,7 @@ class VirtuesController < ApplicationController
 
   def create
     virtue = Virtue.find_by(name: params[:virtue][:name])
+    
     if !virtue
       @virtue = Virtue.create(name: params[:virtue][:name])
     else
