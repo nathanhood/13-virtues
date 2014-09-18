@@ -14,7 +14,7 @@
           = f.input :name, label: "New Virtue", required: true, input_html: { class: "final-virtue-input" }
         = f.fields_for :commitments do |ff|
           = ff.input :description, as: :text
-        = f.submit "Submit", input_html: { class: "btn large-btn" }
+        = f.submit "Submit", class: "button"
         %a.hide-add-virtue(href="#") Hide
 
     .row

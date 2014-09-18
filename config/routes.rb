@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :virtues, only: [:index, :create]
+  resources :daily_reports
   root 'static_pages#home'
   get '/profile', to: 'users#show'
 

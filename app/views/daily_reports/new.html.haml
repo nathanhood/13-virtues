@@ -1,0 +1,4 @@
+%h1 Daily Report
+= simple_form_for(@daily_report) do |f|
+  = f.input :entry, as: :text, label: "Journal Entry"
+  = f.submit "Submit Report", class: "button"

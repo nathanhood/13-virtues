@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :commitments
   has_many :virtues, through: :commitments
+  has_many :daily_reports
 end
