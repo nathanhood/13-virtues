@@ -1,8 +1,8 @@
 
 # Features
-* Create an account with Email
+* Create an account with Email X
 * Create an account with Facebook
-* Create/Choose virtues
+* Create/Choose virtues X
 * Create objectives (tangible goals)
   * set deadline
 * Record daily records
@@ -11,7 +11,8 @@
 * Set reminder for daily recording
 * Set reminders for achieving objectives
 * Complete Goals
-* View virtue/objective progress and daily logs
+* View virtue/objective progress
+* View daily entries
 * View daily report
 * Change virtues
 * Delete goals
@@ -97,3 +98,32 @@ I want to create virtues or choose from a list of existing virtues
 * Virtue and User are added to join table
 
 ## User records daily records
+
+As a user,
+in order to track my progress in pursuing virtues,
+I want to create daily reports wherein I rate myself on each user
+and write a daily journal to help process the day's events
+
+**Usage:**
+1. On profile page, click "Add Daily Report"
+
+2. Choose score for each virtue and type daily journal entry
+
+3. Click "Submit Report"
+
+**Acceptance Criteria**
+* All virtues are required to be rated
+* Journal entry is optional
+* More than one report can be created per day
+
+## User views virtue/objective progress
+
+As a user,
+in order to review my virtuous goals,
+I want to be able to see the history of my daily virtue ratings
+
+**Usage:**
+1. On profile page, user can view graphs that show
+  * Main graph (weekly, monthly, year, etc)
+  * Pie chart with average scores per virtue
+  * Bar graph with average scores per virtue

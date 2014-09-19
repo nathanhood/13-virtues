@@ -8,6 +8,8 @@ RSpec.describe Commitment, :type => :model do
   end
 
   it { should validate_presence_of :description }
+  it { should validate_presence_of :user }
+  it { should validate_presence_of :virtue }
 
   it "should successfully create commitment" do
     commitment = Commitment.create(description: "test description", user: @user, virtue: @virtue)

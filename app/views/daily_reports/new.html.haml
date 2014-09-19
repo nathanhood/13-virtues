@@ -2,4 +2,14 @@
 %h1 Daily Report
 = simple_form_for(@daily_report) do |f|
   = f.input :entry, as: :text, label: "Journal Entry"
+  - current_user.virtues.each do |virtue|
+    = f.fields_for :virtue do |ff|
+      = ff.input :rating,
+                 label: virtue.name,
+                 input_html: {name: "daily_report[virtue_reports][#{virtue.id}][rating]"},
+                 name: "daily_report[virtue.name][virtue_reports][rating]",
+                 collection: [['No effort', 1], ['needs improvement', 2], ['satisfactory', 3], ['good', 4], ['exceptional', 5]],
+                 as: :radio_buttons,
+                 item_wrapper_class: 'inline',
+                 checked: true
   = f.submit "Submit Report", class: "button"

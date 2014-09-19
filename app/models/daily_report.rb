@@ -3,6 +3,8 @@ class DailyReport < ActiveRecord::Base
   before_save { self.entry = format_entry(entry) }
 
   belongs_to :user
+  has_many :virtue_reports
+  has_many :virtues, through: :virtue_reports
 
   private
     def format_entry(entry)
