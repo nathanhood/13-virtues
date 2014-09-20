@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  sequence :name do |n|
+    "test virtue #{n}"
+  end
+
+# FactoryGirl.define do
   factory :user do
     email "test@mail.com"
     password "foobar11"
@@ -6,7 +11,7 @@ FactoryGirl.define do
   end
 
   factory :virtue do
-    name "test virtue"
+    name { generate(:name) }
   end
 
   factory :commitment do

@@ -22,6 +22,8 @@ gem 'jquery-ui-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'letter_opener'
+  gem 'pry-rails'
+
 end
 
 group :test do

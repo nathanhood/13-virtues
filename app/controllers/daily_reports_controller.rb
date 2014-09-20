@@ -11,7 +11,7 @@ class DailyReportsController < ApplicationController
       flash[:notice] = "Today's report has been successfully saved!"
       redirect_to profile_path
     else
-      flash.now[:alert] = "Something went wrong, your report was not saved."
+      flash.now[:alert] = "Something went wrong, your report was not saved. Please make sure to rate yourself on all virtues."
       render :new
     end
   end
@@ -34,6 +34,6 @@ class DailyReportsController < ApplicationController
         end
       end
 
-      virtues.length == report[:virtue_reports].length ? true : false
+      current_user.virtues.length == virtues.length ? true : false
     end
 end

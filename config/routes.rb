@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get '/profile', to: 'users#show'
 
+  namespace :api do
+    resources :users, only: [:show]
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

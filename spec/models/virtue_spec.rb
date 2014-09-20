@@ -4,6 +4,8 @@ RSpec.describe Virtue, :type => :model do
   it { should validate_presence_of :name }
   it { should validate_uniqueness_of :name }
   it { should ensure_length_of(:name).is_at_most(20) }
+  it { should have_many :virtue_reports }
+  it { should have_many :daily_reports }
 
   describe "format_name method" do
     it "should produce a camel-cased virtue name" do
