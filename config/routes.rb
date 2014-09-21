@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#show'
 
   namespace :api do
-    resources :users, only: [:show]
+    resources :charts, only: [:show]
   end
 
   # Example of regular route:
