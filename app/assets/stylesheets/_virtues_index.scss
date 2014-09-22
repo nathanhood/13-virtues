@@ -71,8 +71,8 @@
 .virtues-list-wrapper {
   margin: 20px 0;
   @include grid-column(
-    $columns: 10,
-    $offset: 1
+    $columns: 9,
+    $offset: 1.5
   );
 }
 
@@ -82,6 +82,7 @@
     padding: 10px 35px;
     border: 1px solid black;
     margin-bottom: 20px;
+
   }
 
   h4 {
@@ -97,6 +98,8 @@
 .virtue-title {
   margin-bottom: 0;
 }
+
+
 
 
 @media screen and (max-width: 1000px) and (min-width: 530px) {

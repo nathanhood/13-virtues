@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
     def after_sign_up_path_for(resource)
-      flash.notice = "Welcome to 13 Virtues, #{current_user.email}!"
+      # flash.notice = "Welcome to 13 Virtues, #{current_user.email}!"
       profile_path
     end
 

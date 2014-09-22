@@ -1,10 +1,10 @@
-- flash.each do |name, msg|
-  - if msg.is_a?(String)
-    .welcome-wrapper
+.welcome-wrapper
+  - flash.each do |name, msg|
+    - if msg.is_a?(String)
       .alert= msg
-      .add-report-wrapper
-        - if current_user.virtues.count > 0
-          = link_to "Add Daily Report", new_daily_report_path, class: "button"
+  .add-report-wrapper
+    - if add_daily_report?
+      = link_to "Add Daily Report", new_daily_report_path, class: "button"
 .getting-started-wrapper
   - if current_user.virtues.count == 0
     .getting-started
