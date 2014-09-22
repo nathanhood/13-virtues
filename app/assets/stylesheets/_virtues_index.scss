@@ -1,12 +1,39 @@
-.virtues-wrapper {
-  margin: 20px 0 0 0;
+@import "foundation/components/grid";
 
-  .virtues-index-title {
-    text-align: center;
+.virtues-wrapper {
+  @include grid-column(12);
+  margin: 20px 0 0 0;
+}
+
+.virtues-index-title {
+  text-align: center;
+  display: inline-block;
+  @include grid-column(
+    $columns: 4,
+    $offset: 4
+  );
+}
+
+.show-add-virtue {
+  @include grid-column(4);
+  display: none;
+  button {
+    padding: 16px;
   }
 }
 
+.heading-wrapper {
+  @include grid-column(
+    $columns: 10,
+    $offset: 1
+  );
+}
+
 .add-virtues-wrapper {
+  @include grid-column(
+    $columns: 9,
+    $offset: 1.5
+  );
   border: 1px solid black;
   border-radius: 7px;
   padding: 20px 30px;
@@ -14,13 +41,7 @@
 
   .add-virtue-title {
     text-align: center;
-    font-weight: bold;
   }
-}
-
-.show-add-virtue {
-  float: left;
-  display: none;
 }
 
 .hide-add-virtue:hover {
@@ -29,4 +50,69 @@
 
 .final-virtue-wrapper {
   display: none;
+}
+
+#virtue-commitments-description {
+  height: 45px;
+}
+
+.virtue-input-note {
+  font-size: .8rem;
+}
+
+#virtue_name.final-virtue-input {
+  margin-bottom: 5px;
+}
+
+.hide-add-virtue {
+  margin-left: 10px;
+}
+
+.virtues-list-wrapper {
+  margin: 20px 0;
+  @include grid-column(
+    $columns: 10,
+    $offset: 1
+  );
+}
+
+.virtues-list {
+
+  .virtue-wrapper {
+    padding: 10px 35px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+}
+
+.virtue-description {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.virtue-title {
+  margin-bottom: 0;
+}
+
+
+@media screen and (max-width: 1000px) and (min-width: 530px) {
+  .add-virtues-wrapper {
+    @include grid-column(
+      $columns: 8,
+      $offset: 2
+    );
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .add-virtues-wrapper {
+    @include grid-column(
+      $columns: 12,
+      $offset: 0
+    );
+  }
 }

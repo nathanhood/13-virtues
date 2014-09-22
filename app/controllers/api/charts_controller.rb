@@ -70,9 +70,7 @@ class Api::ChartsController < ApplicationController
     def format_virtue_reports(virtue)
       final = []
       reports = virtue.daily_reports.where("daily_reports.user_id = ? AND daily_reports.created_at >= ?", current_user.id, 1.year.ago).order("created_at ASC")
-      # puts "=============== REPORTS LENGTH ================="
-      # puts reports.length
-      # puts virtue.inspect
+
       if reports.length > 1
         reports.each do |report|
           array = []

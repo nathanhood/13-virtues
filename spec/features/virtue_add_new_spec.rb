@@ -30,8 +30,7 @@ feature "Add Virtue" do
   end
 
   scenario "successfully adding a virtue", js: true do
-    click_link "click here"
-    fill_in "New Virtue", with: "test virtue 1"
+    fill_in "Virtue", with: "test virtue 1"
     fill_in "Description", with: "some test description"
     click_on "Submit"
     expect(current_path).to eq(virtues_path)
@@ -50,8 +49,7 @@ feature "Add Virtue" do
     click_on "Add Virtue"
     # select(@virtue.name, :from => 'virtue[name]', :visible => false)
     # find("#virtue_commitments_description").trigger('focus')
-    click_link "click here"
-    fill_in "New Virtue", with: @virtue.name
+    fill_in "Virtue", with: @virtue.name
     fill_in "Description", with: "second test description"
     click_on "Submit"
     expect(current_path).to eq(virtues_path)

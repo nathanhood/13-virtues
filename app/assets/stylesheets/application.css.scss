@@ -15,3 +15,68 @@
  *= require jquery-ui
  *= require foundation_and_overrides
  */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F2EDE4;
+}
+
+p.field-label {
+  display:inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .65rem;
+  margin: 0 0 0 0;
+}
+
+/* ========= NAV BAR ======== */
+
+nav.top-bar {
+  height: 64px;
+  line-height: 64px;
+
+  li {
+    line-height: 64px;
+    a {
+      height: 64px;
+      line-height: 64px;
+    }
+  }
+
+  .title-area {
+    .name {
+      height: 64px;
+    }
+  }
+
+  .top-bar-section ul.right {
+
+    li {
+      height: 64px;
+
+      a {
+        height: 64px;
+        line-height: 64px;
+        font-size: .9rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  nav.top-bar {
+    .top-bar-section ul.right {
+      li {
+        height: 54px;
+        a {
+          height: 54px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+}

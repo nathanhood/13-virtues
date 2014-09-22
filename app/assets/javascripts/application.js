@@ -15,7 +15,6 @@
 //= require jquery-ui
 //= require turbolinks
 //= require foundation
-//= require combo_box
 //= require virtues
 
 $(function(){ $(document).foundation(); });

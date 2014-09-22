@@ -1,17 +1,15 @@
-.row
-  .welcome-wrapper
-    - flash.each do |name, msg|
-      - if msg.is_a?(String)
-        .welcome= msg
-    .add-report-wrapper
-      - if current_user.virtues.count > 0
-        = link_to "Add Daily Report", new_daily_report_path, class: "button"
-.row
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    .welcome-wrapper
+      .alert= msg
+      .add-report-wrapper
+        - if current_user.virtues.count > 0
+          = link_to "Add Daily Report", new_daily_report_path, class: "button"
+.getting-started-wrapper
   - if current_user.virtues.count == 0
-    .getting-started.large-12.small-10.columns.small-offset-1.large-offset-0
+    .getting-started
       %h2 Getting Started
-      %h4 Be like Ben
-      .getting-started-directions.large-6.columns.large-offset-3
+      .getting-started-directions
         %ol
           %li Add your own virtues
           %p Define what is important to you

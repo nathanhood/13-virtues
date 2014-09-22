@@ -1,9 +1,19 @@
+@import "foundation/components/grid";
 
 .getting-started {
   text-align: center;
   border: 1px solid black;
-  border-radius: 7px;
-  padding: 35px 0 35px 0;
+  border-radius: 5px;
+  padding: 20px 0 35px 0;
+  @include grid-column(
+    $columns: 10,
+    $offset: 1
+  );
+  margin-top: 35px;
+}
+
+.getting-started-wrapper {
+  @include grid-row();
 }
 
 .welcome-wrapper {
@@ -13,6 +23,10 @@
 }
 
 .getting-started-directions {
+  @include grid-column(
+    $columns: 8,
+    $offset: 2
+  );
   text-align: left;
   li {
     font-size: 1.3em;
@@ -45,4 +59,37 @@
   width: 50%;
   height: 400px;
   display: inline-block;
+}
+
+@media screen and (max-width: 1030px) and (min-width: 500px) {
+  .getting-started {
+    @include grid-column(
+      $columns: 10,
+      $offset: 1
+    );
+  }
+  .getting-started-directions {
+    @include grid-column(
+      $columns: 10,
+      $offset: 1
+    );
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .getting-started {
+    @include grid-column (
+      $columns: 12,
+      $offset: 0
+    );
+    border: none;
+    margin-top: 0;
+  }
+
+  .getting-started-directions {
+    @include grid-column(
+      $columns: 12,
+      $offset: 0
+    );
+  }
 }

@@ -6,6 +6,8 @@ class DailyReport < ActiveRecord::Base
   has_many :virtue_reports
   has_many :virtues, through: :virtue_reports
 
+  default_scope -> { order("created_at DESC") }
+
   private
     def format_entry(entry)
       entry = entry.strip

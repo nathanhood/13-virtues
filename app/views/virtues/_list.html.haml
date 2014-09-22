@@ -1,3 +1,5 @@
-%li
-  %h4= @commitment.virtue.name
-  %p= @commitment.description
+.virtue-wrapper
+  %li
+    %h4.virtue-title= @commitment.virtue.name
+    %p.field-label description:
+    %p.virtue-description= @commitment.description

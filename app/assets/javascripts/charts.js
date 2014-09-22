@@ -25,7 +25,7 @@
   }
 
   function defaultFormat(){
-    console.log("default format called");
+    // console.log("default format called");
   }
 
   function buildMainGraphObject(reports){
