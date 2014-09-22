@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 #ruby-gemset=thirteen-virtues
 
+ruby '2.1.2'
+
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'haml'
