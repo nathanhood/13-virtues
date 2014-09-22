@@ -15,6 +15,7 @@
  *= require jquery-ui
  *= require foundation_and_overrides
  */
+@import "foundation/components/grid";
 
 * {
   box-sizing: border-box;
@@ -30,6 +31,11 @@ p.field-label {
   letter-spacing: 1px;
   font-size: .65rem;
   margin: 0 0 0 0;
+}
+
+.wrapper {
+  @include grid-column(12);
+  margin: 20px 0 0 0;
 }
 
 /* ========= NAV BAR ======== */
@@ -52,7 +58,7 @@ nav.top-bar {
     }
   }
 
-  .top-bar-section ul.right {
+  .top-bar-section ul.right, .top-bar-section ul.left {
 
     li {
       height: 64px;
@@ -69,7 +75,7 @@ nav.top-bar {
 
 @media screen and (max-width: 640px) {
   nav.top-bar {
-    .top-bar-section ul.right {
+    .top-bar-section ul.right, .top-bar-section ul.left {
       li {
         height: 54px;
         a {

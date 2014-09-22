@@ -61,6 +61,13 @@
   display: inline-block;
 }
 
+.welcome-wrapper {
+  @include grid-column(
+    $columns: 10,
+    $offset: 1
+  );
+}
+
 @media screen and (max-width: 1030px) and (min-width: 500px) {
   .getting-started {
     @include grid-column(

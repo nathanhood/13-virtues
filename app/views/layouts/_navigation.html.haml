@@ -9,6 +9,8 @@
     %ul.right
       - if user_signed_in?
         %li
+          = link_to "Add Daily Report", new_daily_report_path
+        %li
           = link_to "Virtues", virtues_path
         %li
           = link_to "View Journal"

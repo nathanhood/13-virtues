@@ -1,11 +1,11 @@
 .row
-  .virtues-wrapper
+  .wrapper
     .row
-      = render 'layouts/messages'
       .heading-wrapper
+        = render 'layouts/messages'
         %h2.virtues-index-title Virtues
         .show-add-virtue
-          %button.fa.fa-plus Add Virtue
+          %button Add Virtue
       .add-virtues-wrapper(data-virtues="#{current_user.commitments.length}")
         %h3.add-virtue-title Add Virtue
         = simple_form_for(@virtue, remote: true) do |f|
@@ -16,7 +16,7 @@
                 %option{value: "#{v.name}"}= v.name
           %p.virtue-input-note If the virtue you type does not exist, it will be created
           = f.fields_for :commitments do |ff|
-            = ff.input :description, as: :text, input_html: { rows: 5 }
+            = ff.input :description, as: :text, input_html: { rows: 3 }
           = f.submit "Submit", class: "button"
           %a.hide-add-virtue(href="#") Hide
 

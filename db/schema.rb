@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918224627) do
+ActiveRecord::Schema.define(version: 20140922164631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140918224627) do
   add_index "commitments", ["virtue_id"], name: "index_commitments_on_virtue_id", using: :btree
 
   create_table "daily_reports", force: true do |t|
-    t.string   "entry"
+    t.text     "entry"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

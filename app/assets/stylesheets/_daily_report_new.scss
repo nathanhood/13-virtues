@@ -1,0 +1,26 @@
+@import "foundation/components/grid";
+
+.daily_report_wrapper {
+  @include grid-column(
+    $columns: 8,
+    $offset: 2,
+    $center: true
+  );
+
+  .new_daily_report_title {
+    text-align: center;
+  }
+}
+
+.radio-button-block {
+  display: block;
+  height: 25px;
+}
+
+.daily_report_virtue_rating {
+  border: 1px solid black;
+  @include grid-column(
+    $columns: 6
+  );
+  padding: 20px;
+}

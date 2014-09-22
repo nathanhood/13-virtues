@@ -1,0 +1,8 @@
+- if needs_to_add_more_daily_reports?
+  .getting-started
+    %h2 You need more data
+    .getting-started-directions
+      %ol
+        %li Rate how you did today
+        %p You need at least two daily reports before we can show your progress
+      = link_to "Start Here", new_daily_report_path, class: "button add-virtues-link"

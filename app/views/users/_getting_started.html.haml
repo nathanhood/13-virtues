@@ -1,0 +1,14 @@
+- if current_user.virtues.count == 0
+  .getting-started
+    %h2 Getting Started
+    .getting-started-directions
+      %ol
+        %li Add your own virtues
+        %p Define what is important to you
+        %li Make daily assessments
+        %p Assess how you feel you are doing on each virtue. Write a short entry to help process and rate the day's events.
+        %li Set reminders
+        %p Tell us when, and we will send you a daily reminder to keep up with your daily assessments.
+        %li Grow
+        %p Watch yourself grow into the person you want to be
+      = link_to "Add Virtues", virtues_path, class: "button add-virtues-link"

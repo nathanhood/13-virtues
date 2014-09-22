@@ -14,6 +14,6 @@ feature "profile page" do
   scenario "when user has virtues" do
     expect(page).to have_content("Add Daily Report")
     expect(page).to_not have_content("Getting Started")
-    expect(page).to_not have_css("div.getting-started")
+    expect(page).to have_content("You need more data")
   end
 end
