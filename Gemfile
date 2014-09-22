@@ -17,6 +17,7 @@ gem 'spring',        group: :development
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
 gem 'jquery-ui-rails'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails'
@@ -28,7 +29,6 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'pry-rails'
   gem 'shoulda'
   gem 'launchy'
   gem 'database_cleaner'
