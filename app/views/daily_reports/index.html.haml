@@ -1,0 +1,8 @@
+.row
+  .wrapper
+    %h2.journal-entry-title Journal
+    %ul
+      - @daily_reports.each do |report|
+        %li.entry-record
+          %p.entry-date= report.created_at.strftime("%B %d, %Y")
+          %p.entry= report.entry
