@@ -19,6 +19,14 @@ class DailyReportsController < ApplicationController
     end
   end
 
+  def index
+    @daily_reports = current_user.daily_reports
+  end
+
+  def show
+
+  end
+
   private
     def virtue_params
       params.require(:daily_report).permit(:entry, :virtue_reports)
