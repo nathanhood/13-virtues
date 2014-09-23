@@ -1,15 +1,17 @@
-%h2 Sign In
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  - flash.each do |name, msg|
-    - if msg.is_a?(String)
-      %div{:class => "alert-box #{name.to_s == 'notice' ? 'success' : 'alert'}", "data-alert" => ""}
-        = content_tag :div, msg
-        %a.close{:href => "#"} &times;
+.row
+  .form-wrapper
+    %h2 Sign In
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      - flash.each do |name, msg|
+        - if msg.is_a?(String)
+          %div{:class => "alert-box #{name.to_s == 'notice' ? 'success' : 'alert'}", "data-alert" => ""}
+            = content_tag :div, msg
+            %a.close{:href => "#"} &times;
 
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Submit"
-= render "devise/shared/links"
+      .form-inputs
+        = f.input :email, required: false, autofocus: true
+        = f.input :password, required: false
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      .form-actions
+        = f.button :submit, "Submit"
+    = render "devise/shared/links"

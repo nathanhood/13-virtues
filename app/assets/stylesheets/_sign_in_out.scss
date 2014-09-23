@@ -1,0 +1,19 @@
+@import "foundation/components/grid";
+
+.form-wrapper {
+  margin-top: 25px;
+  @include grid-column(
+    $columns: 7,
+    $offset: 2.5
+  );
+}
+
+@media screen and (max-width: 580px) {
+  .form-wrapper {
+    margin-top: 15px;
+    @include grid-column(
+      $columns: 11,
+      $offset: .5
+    );
+  }
+}

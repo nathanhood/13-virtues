@@ -1,12 +1,13 @@
 .welcome-wrapper
-  - flash.each do |name, msg|
-    - if msg.is_a?(String)
-      .alert= msg
+  -# - flash.each do |name, msg|
+  -#   - if msg.is_a?(String)
+  -#     .alert= msg
+  = render "layouts/messages"
 .getting-started-wrapper
   = render "getting_started"
   = render "adding_daily_report"
 .profile-wrapper
   %h2.profile-title Virtue Dashboard
   #main-graph
-  #pie-chart
   #bar-graph
+  #pie-chart
