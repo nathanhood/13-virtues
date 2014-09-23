@@ -5,7 +5,7 @@
         = render 'layouts/messages'
         %h2.virtues-index-title Virtues
         .show-add-virtue
-          %button Add Virtue
+          %button.tiny Add Virtue
       .add-virtues-wrapper(data-virtues="#{current_user.commitments.length}")
         %h3.add-virtue-title Add Virtue
         = simple_form_for(@virtue, remote: true) do |f|
