@@ -19,4 +19,16 @@ FactoryGirl.define do
     user
     virtue
   end
+
+  factory :daily_report do
+    entry "This is an example daily_report entry"
+    created_at DateTime.now
+    user
+  end
+
+  factory :virtue_report do
+    rating 3
+    virtue
+    daily_report
+  end
 end

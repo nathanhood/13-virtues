@@ -18,9 +18,34 @@
 }
 
 .daily_report_virtue_rating {
-  border: 1px solid black;
+  border-top: 1px solid black;
   @include grid-column(
     $columns: 6
   );
-  padding: 20px;
+  padding: 20px 30px;
+}
+
+.daily_report_virtue_rating:nth-child(odd) {
+  border-right: 1px solid black;
+}
+
+
+@media screen and (max-width: 750px) {
+  .daily_report_wrapper {
+    @include grid-column(
+      $columns: 10,
+      $offset: 1,
+      $center: true
+    );
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .daily_report_virtue_rating {
+    @include grid-column(
+      $columns: 12
+    );
+    border: 1px solid black;
+    margin: 10px 0;
+  }
 }

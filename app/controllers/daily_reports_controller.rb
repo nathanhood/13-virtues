@@ -2,6 +2,9 @@ class DailyReportsController < ApplicationController
 
   def new
     @daily_report = DailyReport.new
+    current_user.virtues.each do |virtue|
+      @daily_report.virtue_reports.build(virtue: virtue)
+    end
   end
 
   def create

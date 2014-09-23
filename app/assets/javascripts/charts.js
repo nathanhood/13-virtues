@@ -42,10 +42,11 @@
   function buildMainGraph(data){
     $('#main-graph').highcharts({
         chart: {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
             type: 'spline'
         },
         title: {
-            text: 'Virtuous Summary'
+            text: 'Summary'
         },
         xAxis: {
             type: 'datetime',
@@ -76,6 +77,7 @@
   function buildPieChart(data){
     $('#pie-chart').highcharts({
       chart: {
+          backgroundColor: 'rgba(255, 255, 255, 0)',
           plotBackgroundColor: null,
           plotBorderWidth: null,
           plotShadow: false
@@ -108,6 +110,7 @@
   function buildBarGraph(data){
     $('#bar-graph').highcharts({
         chart: {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
             type: 'column'
         },
         title: {
