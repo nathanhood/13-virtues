@@ -2,8 +2,11 @@
   .wrapper
     = render "layouts/messages"
     .row
-      .daily_report_wrapper
-        %h2.new_daily_report_title Daily Report
+      .daily-report-wrapper
+        %h2.new-daily-report-title Daily Report
+        - if !add_daily_report?
+          %p.submitted-report-message You have submitted your report today. Come back tomorrow.
+
         = simple_form_for(@daily_report) do |f|
           .row
             = f.simple_fields_for :virtue_reports do |ff|

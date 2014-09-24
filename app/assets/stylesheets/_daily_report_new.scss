@@ -24,14 +24,14 @@
   margin-bottom: 17px;
 }
 
-.daily_report_wrapper {
+.daily-report-wrapper {
   @include grid-column(
     $columns: 8,
     $offset: 2,
     $center: true
   );
 
-  .new_daily_report_title {
+  .new-daily-report-title {
     text-align: center;
   }
 }
@@ -53,9 +53,18 @@
   border-right: 1px solid black;
 }
 
+.submitted-report-message {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 5px;
+  font-weight: bold;
+}
+
 
 @media screen and (max-width: 750px) {
-  .daily_report_wrapper {
+  .daily-report-wrapper {
     @include grid-column(
       $columns: 10,
       $offset: 1,
@@ -71,5 +80,10 @@
     );
     border: 1px solid black;
     margin: 10px 0;
+  }
+
+  .submitted-report-message {
+    width: 95%;
+    margin-bottom: 5px;
   }
 }

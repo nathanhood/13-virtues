@@ -1,12 +1,12 @@
 class Api::ChartsController < ApplicationController
 
   def show
-    virtues = current_user.virtues
+    virtues = current_user.virtues.where("virtues.created_at <= ?", 7.days.ago)
     @reports = {}
     averages = []
     monthly_averages = []
-
-    if virtues.length > 0
+    
+    if virtues.length > 0 || virtues
       virtues.each do |v|
         if current_user.daily_reports.length > 1
           @reports[v.name] = { name: v.name, data: format_virtue_reports(v) }

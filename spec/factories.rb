@@ -3,7 +3,6 @@ FactoryGirl.define do
     "test virtue #{n}"
   end
 
-# FactoryGirl.define do
   factory :user do
     email "test@mail.com"
     password "foobar11"
@@ -12,6 +11,7 @@ FactoryGirl.define do
 
   factory :virtue do
     name { generate(:name) }
+    created_at DateTime.now
   end
 
   factory :commitment do

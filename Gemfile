@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
 gem 'jquery-ui-rails'
 gem 'rails_12factor', group: :production
+gem 'kaminari', '0.16.1'
 
 group :development, :test do
   gem 'rspec-rails'
