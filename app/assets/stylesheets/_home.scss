@@ -1,0 +1,75 @@
+@import "foundation/components/grid";
+@import "variables";
+
+.ben-wrapper {
+  width: 100%;
+  height: 350px;
+  background-image: url(image_path("ben.jpg"));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.home-banner {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 75%;
+  height: 40%;
+  text-align: center;
+}
+
+.home-title {
+  font-family: $logo-font;
+  font-size: 3.8rem;
+  color: #F2EDE4;
+  text-align: center;
+}
+
+.ben-quote {
+  font-family: $sans-serif-font;
+  letter-spacing: .7px;
+  color: #4C3E25;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.ben-quote:last-child {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.quote-wrapper {
+  margin: 35px auto 0 auto;
+  text-align: center;
+}
+
+#home-button {
+  margin-top: 30px;
+  background-color: none;
+  color: #F2EDE4;
+  font-family: $sans-serif-font;
+  font-size: 1.2rem;
+}
+
+.intro-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.intro-title {
+  font-size: 2.7rem;
+  font-family: $logo-font;
+}
+
+.intro-text {
+  font-size: 1.3rem;
+  width: 45%;
+  margin: 0 auto;
+  font-family: $sans-serif-font;
+}
