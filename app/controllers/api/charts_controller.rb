@@ -5,7 +5,7 @@ class Api::ChartsController < ApplicationController
     @reports = {}
     averages = []
     monthly_averages = []
-    
+
     if virtues.length > 0 || virtues
       virtues.each do |v|
         if current_user.daily_reports.length > 1
@@ -35,7 +35,7 @@ class Api::ChartsController < ApplicationController
           virtue_report = report.virtue_reports.where(virtue: virtue).first
           array.push(format_date(report.created_at))
           array.push(virtue_report.rating)
-          final.push(array)
+          final.unshift(array)
         end
       end
       final
