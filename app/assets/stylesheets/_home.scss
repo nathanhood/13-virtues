@@ -73,3 +73,67 @@
   margin: 0 auto;
   font-family: $sans-serif-font;
 }
+
+@media screen and (max-width: 860px) {
+  .home-title {
+    font-size: 3rem;
+  }
+
+  #home-button {
+    font-size: 1.1rem;
+  }
+
+  .intro-text {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .ben-wrapper {
+    height: 320px;
+  }
+
+  .home-banner {
+    top: -95px;
+  }
+
+  .home-title {
+    font-size: 2.5rem;
+    line-height: 1.7em;
+  }
+
+  #home-button {
+    font-size: 1rem;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    width: 80%;
+  }
+
+  .ben-quote {
+    letter-spacing: .4px;
+    color: #4C3E25;
+    font-size: 1.1rem;
+  }
+
+  .ben-quote:last-child {
+    font-size: 1.2rem;
+  }
+
+  .ben-quote:last-child {
+    font-size: 1.35rem;
+    font-weight: bold;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+
+  .intro-wrapper {
+    margin: 40px auto;
+  }
+}
