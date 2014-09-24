@@ -12,9 +12,7 @@
       type: "GET",
       dataType: "json",
       success: (function(data){
-        if ( $.isEmptyObject(data.reports) ) {
-          defaultFormat();
-        } else {
+        if ( !$.isEmptyObject(data.reports) ) {
           var ratings = buildMainGraphObject(data.reports);
           buildPieChart(data.percentages);
           buildMainGraph(ratings);
@@ -22,10 +20,6 @@
         }
       })
     });
-  }
-
-  function defaultFormat(){
-    // console.log("default format called");
   }
 
   function buildMainGraphObject(reports){

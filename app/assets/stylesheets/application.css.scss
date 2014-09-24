@@ -16,6 +16,7 @@
  *= require foundation_and_overrides
  */
 @import "foundation/components/grid";
+@import "variables";
 
 * {
   box-sizing: border-box;
@@ -36,4 +37,28 @@ p.field-label {
 .wrapper {
   @include grid-column(12);
   margin: 20px 0 0 0;
+}
+
+.header .top-bar {
+  box-shadow: 0px 0px 10px darken(#686868, 10%);
+}
+
+#nav-bar-logo {
+  height: 60px;
+  width: 140px;
+}
+
+#nav-bar-logo .number {
+  font-family: $logo-font;
+  font-size: 1.7rem;
+}
+
+#nav-bar-logo .text {
+  font-family: $serif-font;
+  padding-left: 2px;
+}
+
+#nav-bar-container {
+  height: 60px;
+  margin-left: 10px;
 }

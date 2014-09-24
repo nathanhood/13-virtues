@@ -28,6 +28,7 @@ feature "profile page" do
   end
 
   scenario "when user has more than one daily report that is at least four days old", js:true do
+    pending "took off 7 day old min for virtues for demo"
     @daily_report = FactoryGirl.create(:daily_report, user: @user, created_at: 3.days.ago)
     @daily_report2 = FactoryGirl.create(:daily_report, user: @user, created_at: 6.days.ago)
     @virtue_report = FactoryGirl.create(:virtue_report, virtue: @virtue, daily_report: @daily_report)
@@ -42,6 +43,7 @@ feature "profile page" do
   end
 
   scenario "when user has created new virtue after recording daily reports previously", js: true do
+    pending "took off 7 day old min for virtues for demo"
     @daily_report = FactoryGirl.create(:daily_report, user: @user, created_at: 3.days.ago)
     @daily_report2 = FactoryGirl.create(:daily_report, user: @user, created_at: 6.days.ago)
     @virtue_report = FactoryGirl.create(:virtue_report, virtue: @virtue, daily_report: @daily_report)

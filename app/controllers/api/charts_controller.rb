@@ -1,7 +1,7 @@
 class Api::ChartsController < ApplicationController
 
   def show
-    virtues = current_user.virtues.where("virtues.created_at <= ?", 7.days.ago)
+    virtues = current_user.virtues
     @reports = {}
     averages = []
     monthly_averages = []
