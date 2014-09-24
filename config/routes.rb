@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :virtues, only: [:index, :create]
   resources :daily_reports
   resources :virtue_reports
+  resources :commitments, only: [:edit, :update, :destroy]
   root 'static_pages#home'
   get '/profile', to: 'users#show'
 

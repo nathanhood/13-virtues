@@ -1,5 +1,7 @@
 class DailyReportsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @daily_report = DailyReport.new
     current_user.virtues.each do |virtue|

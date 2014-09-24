@@ -1,0 +1,28 @@
+@import "foundation/components/grid";
+
+.edit-commitment-wrapper {
+  @include grid-column(
+    $columns: 8,
+    $offset: 2
+  );
+  border: 1px solid black;
+  margin-top: 30px;
+}
+
+.edit-commitment-title {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.edit-commitment-form a {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .edit-commitment-wrapper {
+    @include grid-column(
+      $columns: 11,
+      $offset: .5
+    );
+  }
+}

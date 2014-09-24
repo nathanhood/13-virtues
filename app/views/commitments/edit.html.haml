@@ -1,0 +1,9 @@
+.row
+  .wrapper
+    .edit-commitment-wrapper
+      %h2.edit-commitment-title Edit #{@commitment.virtue.name}
+      .edit-commitment-form
+        = simple_form_for(@commitment, method: "PATCH") do |f|
+          = f.input :description
+          = f.submit "Save", class: "button"
+          = link_to "Cancel", virtues_path
