@@ -4,5 +4,4 @@ rvm:
 addons:
   postgresql: "9.3"
 before_script:
-  - cp config/database.yml.example config/database.yml
   - psql -c 'create database thirteen_virtues_test;' -U postgres
