@@ -4,7 +4,6 @@ rvm:
 addons:
   postgresql: "9.3"
 before_script:
-  - psql -c 'create database thirteen-virtues-test;' -U postgres
-  - bundle exec rake db:schema:load
+  - psql -c 'create database thirteen-virtues_test;' -U postgres
 script:
   - bundle exec rake
