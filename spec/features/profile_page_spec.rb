@@ -2,7 +2,7 @@ feature "profile page" do
 
   background do
     @user = FactoryGirl.create(:user)
-    @virtue = FactoryGirl.create(:virtue, created_at: 8.days.ago)
+    @virtue = FactoryGirl.create(:virtue)
     @commitment = FactoryGirl.create(:commitment, user: @user, virtue: @virtue)
     visit "/"
     click_link "Sign In"
