@@ -33,4 +33,4 @@
                     %li
                       = link_to "Edit", edit_commitment_path(c.id), class: "js-edit-commitment tiny button"
                     %li
-                      = link_to "Delete", commitment_path(c.id), method: "DELETE", class: "tiny button", data: { confirm: "Are you sure you want to delete this virtue? This cannot be undone." }
+                      = link_to "Delete", commitment_path(c.id), method: "DELETE", class: "tiny button delete-#{c.id}", data: { confirm: "Are you sure you want to delete this virtue? This cannot be undone." }
