@@ -3,8 +3,6 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 virtues = Virtue.create([{name: "Temperance"}, {name: "Silence"}, {name: "Order"}, {name: "Resolution"},
   {name: "Frugality"}, {name: "Sincerity"}, {name: "Justice"}, {name: "Moderation"},
   {name: "Cleanliness"}, {name: "Tranquillity"}, {name: "Chastity"}, {name: "Humility"}])
