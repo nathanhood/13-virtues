@@ -1,11 +1,10 @@
 13 Virtues
 ==========
 
-[![Build Status](https://travis-ci.org/nathanhood/13-virtues.svg?branch=master)]
-[![Code Climate](https://codeclimate.com/github/nathanhood/13-virtues/badges/gpa.svg)]
+[![Build Status](https://travis-ci.org/nathanhood/nashploration.svg?branch=master)](https://travis-ci.org/nathanhood/nashploration)
+[![Code Climate](https://codeclimate.com/github/nathanhood/13-virtues/badges/gpa.svg)](https://codeclimate.com/github/nathanhood/13-virtues)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+
 
 Things you may want to cover:
 
