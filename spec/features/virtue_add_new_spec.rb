@@ -42,13 +42,10 @@ feature "Add Virtue" do
   end
 
   scenario "should successfully create a virtue from existing virtue", js: true do
-    # pending("something else getting finished")
     @virtue = FactoryGirl.create(:virtue)
     FactoryGirl.create(:commitment, user: @user, virtue: @virtue)
     visit "/virtues"
     click_on "Add Virtue"
-    # select(@virtue.name, :from => 'virtue[name]', :visible => false)
-    # find("#virtue_commitments_description").trigger('focus')
     fill_in "Virtue", with: @virtue.name
     fill_in "Description", with: "second test description"
     click_on "Submit"
