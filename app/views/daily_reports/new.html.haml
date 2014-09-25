@@ -4,20 +4,25 @@
     .row
       .daily-report-wrapper
         %h2.new-daily-report-title Daily Report
-        - if !add_daily_report?
-          %p.submitted-report-message You have submitted your report today. Come back tomorrow.
+        - if has_virtues?
+          - if daily_report_submitted?
+            %p.submitted-report-message You have submitted your report today. Come back tomorrow.
 
-        = simple_form_for(@daily_report) do |f|
-          .row
-            = f.simple_fields_for :virtue_reports do |ff|
-              = ff.input :rating,
-                         wrapper_html: { class: "daily_report_virtue_rating", id: "virtue-#{ff.object.virtue.id}-input" },
-                         input_html: {name: "daily_report[virtue_reports][#{ff.object.virtue.id}][rating]"},
-                         label: ff.object.virtue.name,
-                         collection: [['exceptional', 5], ['good', 4], ['satisfactory', 3], ['needs improvement', 2], ['No effort', 1]],
-                         as: :radio_buttons,
-                         item_wrapper_class: 'radio-button-block',
-                         checked: true
-          .row
-          = f.input :entry, as: :text, label: "Journal Entry", input_html: { rows: 8 }
-          = f.submit "Submit Report", class: "button"
+          = simple_form_for(@daily_report) do |f|
+            .row.virtue-rating-form
+              = f.simple_fields_for :virtue_reports do |ff|
+                = ff.input :rating,
+                           wrapper_html: { class: "daily_report_virtue_rating", id: "virtue-#{ff.object.virtue.id}-input" },
+                           input_html: {name: "daily_report[virtue_reports][#{ff.object.virtue.id}][rating]"},
+                           label: ff.object.virtue.name,
+                           collection: [['exceptional', 5], ['good', 4], ['satisfactory', 3], ['needs improvement', 2], ['No effort', 1]],
+                           as: :radio_buttons,
+                           item_wrapper_class: 'radio-button-block',
+                           checked: true
+            .row
+            = f.input :entry, as: :text, label: "Journal Entry", input_html: { rows: 8 }
+            = f.submit "Submit Report", class: "button"
+        - else
+          .no-virtues-wrapper
+            %p.no-virtues-message You do not have any virtues yet.
+            = link_to "Add Virtues", virtues_path, class: "button add-virtues-link"

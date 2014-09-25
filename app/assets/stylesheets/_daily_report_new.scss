@@ -5,7 +5,11 @@
   @include grid-column(
     $columns: 9,
     $offset: 1.5
-  )
+  );
+  background-color: white;
+  box-shadow: 0px 0px 10px darken(#686868, 10%);
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .entry-date {
@@ -31,8 +35,11 @@
     $center: true
   );
 
+  color: #4C3E25;
+
   .new-daily-report-title {
     text-align: center;
+    margin-bottom: 20px;
   }
 }
 
@@ -42,15 +49,22 @@
 }
 
 .daily_report_virtue_rating {
-  border-top: 1px solid black;
   @include grid-column(
-    $columns: 6
+    $columns: 5,
+    $offset: .5
   );
   padding: 20px 30px;
+  background-color: white;
+  box-shadow: 0px 0px 10px darken(#686868, 10%);
+  margin: 0 20px 20px 20px;
 }
 
-.daily_report_virtue_rating:nth-child(odd) {
-  border-right: 1px solid black;
+abbr {
+  display: none;
+}
+
+.virtue-rating-form div.input label.radio-buttons {
+  font-size: 1.2rem !important;
 }
 
 .submitted-report-message {
@@ -62,6 +76,23 @@
   font-weight: bold;
 }
 
+.no-virtues-wrapper {
+  text-align: center;
+  .no-virtues-message {
+    margin-top: 40px;
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  .daily_report_virtue_rating {
+    @include grid-column(
+      $columns: 12,
+      $offset: 0
+    );
+  }
+}
 
 @media screen and (max-width: 750px) {
   .daily-report-wrapper {
@@ -78,12 +109,22 @@
     @include grid-column(
       $columns: 12
     );
-    border: 1px solid black;
     margin: 10px 0;
+  }
+
+  .daily_report_virtue_rating:last-child {
+    margin-bottom: 20px;
   }
 
   .submitted-report-message {
     width: 95%;
     margin-bottom: 5px;
+  }
+
+  .entry-record {
+    @include grid-column(
+      $columns: 12,
+      $offset: 0
+    );
   }
 }
